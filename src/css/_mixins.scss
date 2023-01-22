@@ -1,0 +1,11 @@
+@mixin underlineText($color: $secondary-color-normal, $width: 5rem) {
+    &::before {
+        content: '';
+        position: absolute;
+        transform: translateY(2.2rem);
+        width: $width;
+        border-radius: 5rem;
+        height: .4rem;
+        background: $color
+    }
+}

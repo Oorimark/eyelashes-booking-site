@@ -1,0 +1,159 @@
+@import "mixins";
+$mobile-padding: 2rem; 
+
+.home-container{
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    // overflow-x: hidden;
+    > * {
+        // border: .1rem solid black;
+    }
+    .hero-section{
+        background: $placeholder-color url('../assets/hero-img.png');
+        position: relative;
+        // padding: 0rem $mobile-padding;
+        .img-container{
+            position: absolute;
+            img{
+                width: 20rem;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                background: linear-gradient(to left, transparent, black);
+                z-index: 22;
+            }
+        }
+        .text-container{
+            position: relative;
+            z-index: 99;
+            padding: 0rem 1rem;
+            h1{
+                font-size: clamp(3rem, 10vw, 5.4rem);
+                color: $primary-color-light;
+                // margin-block: 2rem;
+                line-height: 3.5rem;
+                margin: 1.2rem 0rem;
+            }
+            p{
+                color: $primary-color-normal;
+            }
+            .hero-cta{
+                margin: 1.2rem 0rem;
+            }
+        }
+    }
+    .aboutUs-section{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        place-items: center;
+        .img-container{
+            img{
+                width: clamp(19rem, 40vw, 40rem);
+            }
+        }
+        .text-container{
+            width: 93%;
+            h5,h3,p{
+                text-align: center;
+            }
+            .header{
+                h5{
+                    margin: 1rem 0rem;
+                    @include underlineText();
+
+                }
+                h3{
+                     color: $secondary-color-normal
+                 }
+            }
+            p{margin: 1rem 0rem;}
+            button{
+                display: block;
+                margin: 0rem auto;
+            }
+        }
+    }
+    .booking-section{
+        background: $placeholder-color;
+        padding: 2rem 1rem;
+        margin: 4rem 0rem;
+        .header{
+            h5{
+                margin: 1rem 0rem;
+                @include underlineText();
+            }
+            h3{
+                color: $secondary-color-normal;
+            }
+        }
+        .card-container{
+            margin: 3rem 0rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 2rem;
+            > :not(:first-child){
+                margin-top: 2rem;
+            }
+            &:first-child{
+                margin-top: 0rem;
+            }
+        }
+        .booking-section-cta{
+            display: block;
+            margin: 0rem auto;
+            &:hover{
+                background: transparent;
+                outline: .2rem solid $secondary-color-normal;
+                color: black;
+            }
+        }
+    }
+    // for mobile view
+    @media screen and (min-width: 30em){
+        .hero-section{
+            background: $placeholder-color;
+            display: flex; 
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+            .img-container{
+                position: static;
+                img{
+                    width: 29rem;
+                }
+                &::before{
+                    height: 87.5%;
+                }
+            }
+            .text-container{
+                width: 40%;
+                column-gap: 2rem;
+                h1{
+                    line-height: 5rem;
+                }
+            }
+        }
+        .aboutUs-section{
+            .text-container{
+                width: 40%;
+                h5,h3,p{
+                    text-align: left;
+                }
+                button{
+                    margin: 0rem;
+                }
+            }
+        }
+        .booking-section{
+            padding: 3rem 4rem;
+        }
+    }
+}

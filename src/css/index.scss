@@ -1,0 +1,14 @@
+@import 'color';
+@import 'home';
+@import 'nav';
+@import 'card';
+@import 'component';
+@import 'booking';
+
+/* utility style classes */
+.pill-button {
+    background: $secondary-color-normal;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+}

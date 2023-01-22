@@ -1,0 +1,31 @@
+.booking-page-container{
+    display: grid;
+    grid-template-columns: auto;
+    .side-bar{
+        background: linear-gradient(176.13deg, #FFFFFF -2.69%, #F1F0F0 -2.68%, rgba(208, 208, 208, 0.87) 97.3%);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            border: .2rem solid black;
+            height: 100vh;
+            background: blue;
+        }
+        main{
+            border: .2rem solid black;
+            height: 100vh;
+            background: red;
+        }
+    }
+
+@media screen and (min-width: 70em){
+    .booking-page-container{
+        grid-template-columns: 23rem auto;
+        // grid-template-areas: 'side-bar main';
+        .side-bar{
+        background: blue;
+        }
+        main{
+            background: red;
+            height
+        }
+    }
+}
