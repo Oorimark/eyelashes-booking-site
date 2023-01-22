@@ -6,12 +6,9 @@ $mobile-padding: 2rem;
     display: grid;
     grid-template-rows: auto;
     // overflow-x: hidden;
-    > * {
-        // border: .1rem solid black;
-    }
     .hero-section{
         background: $placeholder-color url('../assets/hero-img.png');
-        position: relative;
+        // position: relative;
         // padding: 0rem $mobile-padding;
         .img-container{
             position: absolute;
@@ -85,13 +82,17 @@ $mobile-padding: 2rem;
         padding: 2rem 1rem;
         margin: 4rem 0rem;
         .header{
-            h5{
-                margin: 1rem 0rem;
-                @include underlineText();
+            .header-text{
+                h5 {
+                        margin: 1rem 0rem;
+                        @include underlineText();
+                    }
+                
+                    h3 {
+                        color: $secondary-color-normal;
+                    }
             }
-            h3{
-                color: $secondary-color-normal;
-            }
+            .extra-content{ display: none }
         }
         .card-container{
             margin: 3rem 0rem;
@@ -156,4 +157,24 @@ $mobile-padding: 2rem;
             padding: 3rem 4rem;
         }
     }
+
+    @media screen and (min-width: 70em){
+        .booking-section{
+            .header{
+                display: flex;
+                justify-content: space-between;
+                .extra-content{ 
+                    display: block;
+                    ul{
+                        display: flex;
+                        column-gap: 2rem;
+                        li{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+

@@ -1,12 +1,18 @@
 import React from 'react'
+import Dialog from '@mui/material/Dialog';
 import Nav from '../../ui-component/navigation/nav';
 import HeroImg from '../../assets/hero-img.png'
 import AboutImg from '../../assets/feature-img.png'
 import PCard from '../../ui-component/purchase-card/card';
+import Form from '../../component/form';
 
 export default function HomePage(){
+   const [openDialog, setOpenDialog] = React.useState(false)
     return (
       <React.Fragment>
+        <Dialog open={openDialog} onClose={_ => setOpenDialog(false)}>
+          <Form />
+        </Dialog>
         <div className="home-container">
           <Nav />
           <section className="hero-section">
@@ -21,7 +27,7 @@ export default function HomePage(){
                 eyelash extension services. Book your
                 appointment today and experience the difference for yourself!
               </p>
-              <button className="hero-cta cta pill-button">Book Now</button>
+              <button onClick={_ => setOpenDialog(true)} className="hero-cta cta pill-button">Book Now</button>
             </div>
           </section>
           <section className="favorite-section"></section>
@@ -42,8 +48,18 @@ export default function HomePage(){
           <section className="features-section"></section>
           <section className="booking-section">
             <div className="header">
-              <h5>Bookings</h5>
-              <h3>Lorem Ipsum Est Nst Gin Fugiat</h3>
+                <div className="header-text">
+                    <h5>Bookings</h5>
+                    <h3>Lorem Ipsum Est Nst Gin Fugiat</h3>
+                </div>
+                <div className="extra-content">
+                  <ul>
+                    <li>All</li>
+                    <li>Micro service</li>
+                    <li>Eye Lashes</li>
+                    <li>Parity Test</li>
+                  </ul>
+                </div>
             </div>
             <div className="card-container">
               <PCard />

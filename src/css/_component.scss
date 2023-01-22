@@ -90,3 +90,37 @@
         }
     }
 }
+
+.booked-card-container{
+    .card{
+        border: .2rem solid black;
+        width: 80%;
+        max-width: 20rem;
+        background: linear-gradient(12.52deg, rgba(255, 255, 255, 0.7) 23.58%, rgba(243, 243, 243, 0.28) 76.45%);
+            backdrop-filter: blur(20px);
+        border-radius: 5rem;
+        padding: 2rem;
+        display: grid;
+        .text-info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0rem 0rem;
+            .title{
+                font-size: 1.5rem;
+
+            }
+            .status{
+                background-color: $secondary-color-normal;
+                color: $primary-color-normal;
+                padding: .8rem;
+            }
+        }
+        .price{
+            margin-top: 1rem;
+            font-weight: 800;
+            font-size: 1.7rem;
+            line-height: 1rem;
+        }
+    }
+}

@@ -2,7 +2,12 @@
 
 :root{
         font-family: 'Montserrat', sans-serif;
-            line-height: 0px;
+        line-height: 0px;
+}
+
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 h1,h2,h3,h4,h5,h6,p,li{
