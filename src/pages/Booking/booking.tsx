@@ -6,6 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Nav from '../../ui-component/navigation/nav'
 import PCard from '../../ui-component/purchase-card/card'
+import { cards } from '../Home/home';
 
 export default function BookingPage(){
     return(
@@ -37,7 +38,7 @@ export default function BookingPage(){
                         </div>
                     </div>
                     <div className="card-container">
-                        
+                        { cards() }
                     </div>
                 </div>
             </div>

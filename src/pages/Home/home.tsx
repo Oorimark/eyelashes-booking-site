@@ -1,5 +1,6 @@
 import React from 'react'
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
+import {Link} from 'react-router-dom';
 import Nav from '../../ui-component/navigation/nav';
 import HeroImg from '../../assets/hero-img.png'
 import AboutImg from '../../assets/feature-img.png'
@@ -9,7 +10,7 @@ import { AppContext } from '../../app-context/app-context';
 import { QueryManager } from '../../api/queryManager/query-manager';
 
 
-const cards = () => {
+export const cards = () => {
   const query: QueryManager = new QueryManager()
   const data = query.queryData(2)
   return(
@@ -91,12 +92,14 @@ export default function HomePage(){
             <div className="card-container">
               { cards() }
             </div>
-            <button className="cta booking-section-cta pill-button">
+          <Link to="all_services">
+              <button className="cta booking-section-cta pill-button">
                 <div className="wrapper">
                     Load More 
                   <TrendingFlatIcon />
                 </div>
               </button>
+          </Link>
           </section>
         </div>
       </React.Fragment>
