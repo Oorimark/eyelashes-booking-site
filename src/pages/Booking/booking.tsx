@@ -37,16 +37,7 @@ export default function BookingPage(){
                         </div>
                     </div>
                     <div className="card-container">
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
-                        <PCard />
+                        
                     </div>
                 </div>
             </div>

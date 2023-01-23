@@ -9,6 +9,7 @@ import BookedCard from './ui-component/booked-card/booked-card'
 import Dialog from '@mui/material/Dialog';
 import { AppContext } from './app-context/app-context'
 import { getDetails } from './utli/localStorageWorkers';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -49,8 +50,13 @@ function App() {
            { dialogBox.children }
         </Dialog>
           <div className="App">
-          <HomePage />
-    </div>
+            <Router>
+              <Routes>
+                 <Route path="/" element={<HomePage />} />
+                 <Route path="/all_services" element={<BookingPage />} />
+              </Routes>
+            </Router>
+          </div>
     </React.Fragment>
   )
 }

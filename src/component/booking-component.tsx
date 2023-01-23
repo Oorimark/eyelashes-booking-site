@@ -1,4 +1,13 @@
 import React from 'react'
+import dayjs, { Dayjs } from 'dayjs';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PlaceHolderImage from '../assets/Artificial-eyelashes.jpg'
 import { DataSchema, QueryManager } from '../api/queryManager/query-manager';
@@ -10,6 +19,17 @@ type IProps = {
 }
 export default function BookingComponent({ id }: IProps){
     const { bookingDetails, setBookingDetails, setOpenSuccessSnackbar } = React.useContext(AppContext)
+    const [value, setValue] = React.useState< any | Dayjs | null>(
+    dayjs('2014-08-18T21:11:54'),
+  );
+
+    const handleChange = (newValue: Dayjs | null) => {
+        setValue(newValue);
+    };
+    React.useEffect(() => {
+        console.log(value['$d'])
+    }, [value])
+
     const query = new QueryManager()    
     const props = query.queryOneData(id)
 
@@ -19,7 +39,7 @@ export default function BookingComponent({ id }: IProps){
             {
                 userDetails: getDetails(),
                 bookedItemDetails: props,
-                appointmentDate: ""
+                appointmentDate: value ? value['$d'] : ""
             }
         ]);
         setOpenSuccessSnackbar({
@@ -60,6 +80,25 @@ export default function BookingComponent({ id }: IProps){
                         </section>
                         <section className="bookings">
                             <h5>Bookings</h5>
+                            <div className="date">
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                <Stack spacing={3}>
+                                    <MobileDatePicker
+                                    label="Appointment Date"
+                                    inputFormat="DD/MM/YYYY"
+                                    value={value}
+                                    onChange={handleChange}
+                                    renderInput={(params) => <TextField {...params} />}
+                                    />
+                                    <TimePicker
+                                    label="Appointment Time"
+                                    value={value}
+                                    onChange={handleChange}
+                                    renderInput={(params) => <TextField {...params} />}
+                                    />
+                                </Stack>
+                                </LocalizationProvider>
+                            </div>
                         </section>
                         <button className="cta booking-component-cta pill-button" onClick={saveBooking}>Complete Booking</button>
                     </main>

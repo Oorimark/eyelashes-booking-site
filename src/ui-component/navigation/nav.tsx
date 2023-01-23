@@ -13,6 +13,7 @@ import Logo from '../../assets/logo.png'
 import { AppContext } from '../../app-context/app-context';
 import Form from '../../component/form';
 import BookedCard from '../booked-card/booked-card';
+import {Link} from 'react-router-dom'
 
 export default function Nav(){
     const [drawerState, setDrawerState] = React.useState(false)
@@ -92,9 +93,9 @@ export default function Nav(){
           </div>
           <div className="desktop-menu">
             <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Booking</li>
+              <li> <Link to="/">Home</Link> </li>
+              <li> <Link to="">About</Link> </li>
+              <li> <Link to="all_services">Booking</Link></li>
               <li>Contact</li>
             </ul>
           </div>
