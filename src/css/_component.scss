@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0rem;
     .wrapper{
         width: 90%;
         .header{
@@ -18,11 +19,15 @@
         form {
                 display: grid;
                 row-gap: 1rem;
+                input{
+                    border: .1rem solid black;
+                    padding: 1rem;
+                }
             }
         }
     @media screen and (min-width: 70em){
         .wrapper{
-            width: 40%;
+            // width: 40%;
         }
     }
 }
@@ -62,12 +67,21 @@
                     font-size: 2rem;
                 }
                 .extras{
+                    display: flex;
+                    align-items: center;
+                    column-gap: .5rem;
                     h2 {
                             font-weight: 800;
-                            font-size: 2.7rem;
+                            font-size: 1.5rem;
                             color: $secondary-color-normal;
                         }
                     }
+            }
+            .description{
+                > p {
+                    margin: .1rem;
+                    font-size: 13.6239px
+                }
             }
             .requirements{
                 ul{
@@ -82,7 +96,7 @@
     }
     @media screen and (min-width: 40em){
         .wrapper{
-            width: 45%;
+            // width: 45%;
             box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.3);
             main{
                 margin: 2rem;
@@ -91,36 +105,40 @@
     }
 }
 
-.booked-card-container{
-    .card{
-        border: .2rem solid black;
-        width: 80%;
-        max-width: 20rem;
-        background: linear-gradient(12.52deg, rgba(255, 255, 255, 0.7) 23.58%, rgba(243, 243, 243, 0.28) 76.45%);
-            backdrop-filter: blur(20px);
-        border-radius: 5rem;
-        padding: 2rem;
-        display: grid;
-        .text-info{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0rem 0rem;
-            .title{
-                font-size: 1.5rem;
-
-            }
-            .status{
-                background-color: $secondary-color-normal;
-                color: $primary-color-normal;
-                padding: .8rem;
-            }
-        }
-        .price{
-            margin-top: 1rem;
-            font-weight: 800;
-            font-size: 1.7rem;
+.card{
+    
+    border: .2rem solid black;
+    margin: 0rem 1rem;
+    width: 90%;
+    // max-width: 20rem;
+    height: auto;
+    background: linear-gradient(12.52deg, rgba(255, 255, 255, 0.7) 23.58%, rgba(243, 243, 243, 0.28) 76.45%);
+        backdrop-filter: blur(20px);
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    .text-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title{
+            font-size: 1rem;
             line-height: 1rem;
         }
+        .status{
+            background-color: $secondary-color-normal;
+            color: $primary-color-normal;
+            padding: .8rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .price{
+        margin-top: .8rem;
+        font-weight: 800;
+        font-size: 1.3rem;
+        line-height: .3rem;
     }
 }

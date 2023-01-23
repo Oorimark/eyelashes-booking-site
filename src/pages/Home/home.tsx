@@ -1,18 +1,43 @@
 import React from 'react'
-import Dialog from '@mui/material/Dialog';
+import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import Nav from '../../ui-component/navigation/nav';
 import HeroImg from '../../assets/hero-img.png'
 import AboutImg from '../../assets/feature-img.png'
 import PCard from '../../ui-component/purchase-card/card';
 import Form from '../../component/form';
+import { AppContext } from '../../app-context/app-context';
+import { QueryManager } from '../../api/queryManager/query-manager';
+
+
+const cards = () => {
+  const query: QueryManager = new QueryManager()
+  const data = query.queryData(2)
+  return(
+    data.map(data => (
+    <PCard 
+      id = {data.id}
+      name = { data.name }
+      price = {data.price}
+      shortDescription = {data.description.slice(0, 60) + "..."}
+      rating = {data.rating}
+      duration = {data.duration}
+      key = {data.id}
+    />
+   ))
+  )
+}
 
 export default function HomePage(){
-   const [openDialog, setOpenDialog] = React.useState(false)
+    const appContext = React.useContext(AppContext)
+
+    const openForm = () => {
+      appContext.setDialogBox({
+                open: true,
+                children: <Form/>
+            })
+    }
     return (
       <React.Fragment>
-        <Dialog open={openDialog} onClose={_ => setOpenDialog(false)}>
-          <Form />
-        </Dialog>
         <div className="home-container">
           <Nav />
           <section className="hero-section">
@@ -27,11 +52,13 @@ export default function HomePage(){
                 eyelash extension services. Book your
                 appointment today and experience the difference for yourself!
               </p>
-              <button onClick={_ => setOpenDialog(true)} className="hero-cta cta pill-button">Book Now</button>
+              <a href="#booking-section"><button
+               className="hero-cta cta pill-button">Book</button>
+               </a>
             </div>
           </section>
           <section className="favorite-section"></section>
-          <section className="aboutUs-section">
+          <section className="aboutUs-section" id="about-section">
             <div className="img-container">
               <img src={AboutImg} alt="" />
             </div>
@@ -46,7 +73,7 @@ export default function HomePage(){
             </div>
           </section>
           <section className="features-section"></section>
-          <section className="booking-section">
+          <section className="booking-section" id="booking-section">
             <div className="header">
                 <div className="header-text">
                     <h5>Bookings</h5>
@@ -62,14 +89,14 @@ export default function HomePage(){
                 </div>
             </div>
             <div className="card-container">
-              <PCard />
-              <PCard />
-              <PCard />
-              <PCard />
-              <PCard />
-              <PCard />
+              { cards() }
             </div>
-            <button className="cta booking-section-cta pill-button">Load More</button>
+            <button className="cta booking-section-cta pill-button">
+                <div className="wrapper">
+                    Load More 
+                  <TrendingFlatIcon />
+                </div>
+              </button>
           </section>
         </div>
       </React.Fragment>

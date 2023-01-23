@@ -37,10 +37,12 @@ $card-curve: 1rem;
                 h6{
                     font-size: 1.3rem;
                     font-weight: 600;
+                    line-height: 1.5rem;
                 }
                 p{
                     line-height: 0px;
                     font-weight: 800;
+                    color: $secondary-color-normal;
                 }
             }
             p{
@@ -51,9 +53,14 @@ $card-curve: 1rem;
             display: flex;
             justify-content: space-between;
             margin: 0rem;
+            margin: .5rem;
             p{
                 font-size: .8rem;
-                margin: .5rem;
+            }
+            .rating, .duration{
+                display: flex;
+                align-items: center;
+                column-gap: .2rem;
             }
         }
         button{

@@ -5,6 +5,7 @@ body{
   margin: 0;
   outline: 0;
   background: #F5F5F5;
+  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar{
   width: .2rem;

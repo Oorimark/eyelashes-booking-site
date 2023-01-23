@@ -11,6 +11,43 @@
             justify-content: space-between;
             gap: 4rem;
             padding-left: 16rem;
+            li{
+                cursor: pointer;
+                &:hover{
+                    color: $secondary-color-normal;
+                    
+                }
+            }
+        }
+    }
+    .extras{
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+        .appointment{
+            cursor: pointer;
+            span{
+                position: absolute;
+                background: $secondary-color-normal;
+                width: 1.2rem;
+                height: 1.2rem;
+                padding: .6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-weight: 500;
+                font-size: .8rem;
+                color: $primary-color-light;
+            }
+        }
+        .fill-details-cta {
+            background: $secondary-color-normal;
+            cursor: pointer;
+            padding: 1rem 1rem;
+            color: $primary-color-light;
+            font-weight: 500;
+            font-size: .8rem;
         }
     }
     .logo{

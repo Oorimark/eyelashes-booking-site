@@ -8,6 +8,7 @@
 *{
     scroll-behavior: smooth;
     box-sizing: border-box;
+    transition: .3s;
 }
 
 h1,h2,h3,h4,h5,h6,p,li{
@@ -26,7 +27,7 @@ button{
 h1{
     font-style: normal;
     font-weight: 900;
-    font-size: 68.596px;
+    font-size: 58.596px;
     line-height: 80px;
     margin-block: 1rem;
 }
@@ -52,4 +53,7 @@ ul li{
     font-size: 13.6239px;
     line-height: 74px;
 }
-
+a{
+    text-decoration: none;
+    color: black;
+}
