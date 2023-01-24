@@ -6,7 +6,7 @@
     padding: 2rem 0rem;
     .wrapper{
         width: 90%;
-        .header{
+        > .header{
             h5{
                 @include underlineText();
                 margin: 2rem 0rem;
@@ -163,5 +163,14 @@
         justify-content: center;
         padding: .5rem;
         cursor: pointer;
+    }
+}
+
+.contact-component-container{
+    margin: 2rem;
+    .contact-header{
+        h5{
+            @include underlineText()
+        }
     }
 }

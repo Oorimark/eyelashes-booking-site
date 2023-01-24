@@ -482,11 +482,11 @@
   width: 90%;
 }
 
-.form-container .wrapper .header h5 {
+.form-container .wrapper > .header h5 {
   margin: 2rem 0rem;
 }
 
-.form-container .wrapper .header h5::before {
+.form-container .wrapper > .header h5::before {
   content: '';
   position: absolute;
   -webkit-transform: translateY(2.2rem);
@@ -497,7 +497,7 @@
   background: #B0223B;
 }
 
-.form-container .wrapper .header h3 {
+.form-container .wrapper > .header h3 {
   color: #B0223B;
 }
 
@@ -700,6 +700,21 @@
           justify-content: center;
   padding: .5rem;
   cursor: pointer;
+}
+
+.contact-component-container {
+  margin: 2rem;
+}
+
+.contact-component-container .contact-header h5::before {
+  content: '';
+  position: absolute;
+  -webkit-transform: translateY(2.2rem);
+          transform: translateY(2.2rem);
+  width: 5rem;
+  border-radius: 5rem;
+  height: .4rem;
+  background: #B0223B;
 }
 
 .booking-page-container {

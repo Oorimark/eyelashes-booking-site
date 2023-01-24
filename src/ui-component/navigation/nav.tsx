@@ -15,6 +15,7 @@ import { AppContext } from '../../app-context/app-context';
 import Form from '../../component/form';
 import BookedCard from '../booked-card/booked-card';
 import {Link} from 'react-router-dom'
+import ContactPage from '../../component/contact';
 
 export default function Nav(){
     const [drawerState, setDrawerState] = React.useState(false)
@@ -38,6 +39,13 @@ export default function Nav(){
           status = "Booked" 
         />
       )))
+    }
+
+    const openContactComponent = () => {
+      setDialogBox({
+        open: true,
+        children: <ContactPage />
+      })
     }
 
     const viewBookedServices = () => {
@@ -100,7 +108,7 @@ export default function Nav(){
               <li> <Link to="/">Home</Link> </li>
               <li> <Link to="">About</Link> </li>
               <li> <Link to="all_services">Booking</Link></li>
-              <li>Contact</li>
+              <li onClick={openContactComponent}>Contact</li>
             </ul>
           </div>
           <div className="extras">
