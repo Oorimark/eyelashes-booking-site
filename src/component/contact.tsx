@@ -1,8 +1,10 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { AppContext } from '../app-context/app-context';
 
 export default function ContactPage(){
+    const { setDialogBox, setOpenSuccessSnackbar } = React.useContext(AppContext)
     return(
         <React.Fragment>
             <div className="contact-component-container">
@@ -34,6 +36,14 @@ export default function ContactPage(){
                             />
                             </div>
                             </Box>
+                        <button className="cta pill-button" onClick={_ => {
+                            setDialogBox({
+                                open: false
+                            }); setOpenSuccessSnackbar({
+                                open: true,
+                                msg: "Your message has been sent"
+                            })
+                        }}>Send</button>
                 </div>
             </div>
         </React.Fragment>
