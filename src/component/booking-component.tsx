@@ -46,6 +46,7 @@ export default function BookingComponent({ id }: IProps){
             open: true,
             msg: "Appointment has been booked successfully"
         });
+        
     }
 
     return(

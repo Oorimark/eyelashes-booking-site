@@ -20,12 +20,12 @@ $card-curve: 1rem;
             background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.409), rgba(0, 0, 0, 0.409));
         }
     }
-    .text-container{
+    > .text-container{
         background: linear-gradient(12.52deg, rgba(255, 255, 255, 0.7) 23.58%, rgba(243, 243, 243, 0.28) 76.45%);
         backdrop-filter: blur(20px);
         border-radius: 0rem 0rem $card-curve $card-curve;
-        padding: .5rem 1.3rem;
-        .text{
+        padding: .5rem 1.1rem;
+        > .text{
             p{
                 margin: 0px 0px;
             }
@@ -33,10 +33,11 @@ $card-curve: 1rem;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin: 1rem 0rem;
-                h6{
-                    font-size: 1.3rem;
-                    font-weight: 600;
+                margin: rem 0rem;
+                height: 3rem; 
+                .name{
+                    font-size: 1.04rem;
+                    font-weight: 700;
                     line-height: 1.5rem;
                 }
                 p{
@@ -46,15 +47,15 @@ $card-curve: 1rem;
                 }
             }
             p{
-                font-size: .9rem;
+                font-size: .8rem;
             }
         }
         .ratingTime-container{
             display: flex;
             justify-content: space-between;
-            margin: 0rem;
-            margin: .5rem;
+            margin: .7rem 0rem;
             p{
+                margin: .3rem;
                 font-size: .8rem;
             }
             .rating, .duration{

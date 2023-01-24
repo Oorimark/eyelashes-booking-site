@@ -2,7 +2,7 @@ export const sampleData = [
     {
         "id": "lkjaooi2ojo2fh2oi29",
         "img_url": "",
-        "category": "Micro_service",
+        "category": "micro_services",
         "name": "Micro service some task",
         "price": "€12",
         "rating": "5.0",
@@ -13,7 +13,7 @@ export const sampleData = [
     {
         "id": "lkjdagasghwh2oi29",
         "img_url": "",
-        "category": "Micro_service",
+        "category": "eye_lashes",
         "name": "Eye lashes",
         "price": "€12",
         "rating": "5.0",

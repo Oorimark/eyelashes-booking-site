@@ -22,4 +22,8 @@ export class QueryManager{
         const data: DataSchema = sampleData.filter(data => data.id === id)[0]
         return (data)
     }
+    queryCategory(category: string){
+        const data: DataSchema[] = sampleData.filter(data => data.category === category)
+        return (data)
+    }
 }

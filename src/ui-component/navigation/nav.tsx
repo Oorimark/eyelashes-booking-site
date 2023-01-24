@@ -5,6 +5,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import CloseIcon from '@mui/icons-material/Close';
 import List from "@mui/material/List";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
@@ -68,6 +69,9 @@ export default function Nav(){
           open={bookedServicesDrawer}
           onClose={(_) => setBookedServicesDrawer(false)}
         >
+          <div className="close" onClick={_ => setBookedServicesDrawer(false)}>
+            <CloseIcon sx={{fontSize: '2rem'}}/>
+          </div>
           <List>
             {
               bookingDetails.length ? (

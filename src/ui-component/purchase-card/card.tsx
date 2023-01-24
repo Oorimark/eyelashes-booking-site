@@ -2,7 +2,6 @@ import React from 'react'
 import StarRateIcon from '@mui/icons-material/StarRate';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PlaceHolderImage from '../../assets/Artificial-eyelashes.jpg';
-import CloseIcon from '@mui/icons-material/Close';
 import { AppContext } from '../../app-context/app-context';
 import BookingComponent from '../../component/booking-component';
 import Form from '../../component/form';
@@ -51,11 +50,11 @@ export default function PCard(props: IProps){
           <div className="text-container">
             <div className="text">
               <div className="header">
-                <h6 className="name">
+                <span className="name">
                   {
                     props.name
                   }
-                </h6>
+                </span>
                 <p className="price">{props.price}</p>
               </div>
               <p>

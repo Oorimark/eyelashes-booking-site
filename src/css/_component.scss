@@ -147,3 +147,21 @@
         line-height: .3rem;
     }
 }
+
+.social-component-container{
+    position: fixed;
+    right: 1rem;
+    z-index: 99;
+    display: grid;
+    row-gap: 1rem;
+    top: 70%;
+    .facebook,.twitter,.instagram{
+        background: $primary-color-light;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem;
+        cursor: pointer;
+    }
+}

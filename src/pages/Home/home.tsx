@@ -8,6 +8,7 @@ import PCard from '../../ui-component/purchase-card/card';
 import Form from '../../component/form';
 import { AppContext } from '../../app-context/app-context';
 import { QueryManager } from '../../api/queryManager/query-manager';
+import SocialComponent from '../../ui-component/social-media/social';
 
 
 export const cards = () => {
@@ -41,8 +42,8 @@ export default function HomePage(){
       <React.Fragment>
         <div className="home-container">
           <Nav />
+          <SocialComponent />
           <section className="hero-section">
-            <div className="veil"></div>
             <div className="img-container">
                 <img src={HeroImg} alt="" />
             </div>
